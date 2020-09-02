@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  has_many :favorites, dependent: :destroy
-  has_many :blogs
+  has_many :blogs, dependent: :destroy
   before_validation { email.downcase! }
   validates :name,  presence: true, length: { maximum: 30 }
   validates :email, presence: true, length: { maximum: 255 },
